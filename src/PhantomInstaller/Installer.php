@@ -22,7 +22,7 @@ class Installer
 {
     const PHANTOMJS_NAME = 'PhantomJS';
 
-    const PHANTOMJS_TARGETDIR = '/jakoch/phantomjs';
+    const PHANTOMJS_TARGETDIR = '/arnested/phantomjs';
 
     /**
      * Operating system dependend installation of PhantomJS
@@ -78,14 +78,14 @@ class Installer
         $packages = $composer->getRepositoryManager()->getLocalRepository()->getCanonicalPackages();
 
         foreach($packages as $package) {
-            if($package->getName() === 'jakoch/phantomjs-installer') {
+            if($package->getName() === 'arnested/phantomjs-installer') {
                 $version = $package->getPrettyVersion();
             }
         }
 
         // version was not found in the local repository, let's take a look at the root package
         if($version == null) {
-            $version = self::getRequiredVersion($composer->getPackage(), 'jakoch/phantomjs-installer');
+            $version = self::getRequiredVersion($composer->getPackage(), 'arnested/phantomjs-installer');
         }
 
         // fallback to a hardcoded version number, if "dev-master" was set
@@ -119,7 +119,7 @@ class Installer
      * @throws \RuntimeException
      * @return mixed
      */
-    public static function getRequiredVersion(RootPackageInterface $package, $packageName = 'jakoch/phantomjs-installer')
+    public static function getRequiredVersion(RootPackageInterface $package, $packageName = 'arnested/phantomjs-installer')
     {
         foreach (array($package->getRequires(), $package->getDevRequires()) as $requiredPackages) {
             if (isset($requiredPackages[$packageName])) {
