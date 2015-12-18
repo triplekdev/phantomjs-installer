@@ -166,7 +166,7 @@ class Installer
          * The folder structure from
          * https://github.com/eugene1g/phantomjs is different.
          */
-        if ($os === 'macosx') {
+        if ($os === 'macosx' || $os === 'linux') {
             $sourceName = str_replace('/bin', '', $sourceName);
         }
 
@@ -253,7 +253,7 @@ class Installer
             }
 
             if ($bitsize === 64) {
-                $url = 'https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-' . $version . '-linux-x86_64.tar.bz2';
+                $url = 'https://github.com/eugene1g/phantomjs/releases/download/' . $version . '-bin/phantomjs-' . $version . '-ubuntu_x86_64.zip';
             }
         }
 
