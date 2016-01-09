@@ -258,7 +258,7 @@ class Installer
         }
 
         if ($os === 'macosx') {
-            $url = 'https://github.com/Vitallium/phantomjs/releases/download/2.0.1/phantomjs-2.0.1-macosx.zip'
+            $url = 'https://github.com/Vitallium/phantomjs/releases/download/2.0.1/phantomjs-2.0.1-macosx.zip';
             //$url = 'https://github.com/eugene1g/phantomjs/releases/download/' . $version . '-bin/phantomjs-' . $version . '-macosx.zip';
         }
 
