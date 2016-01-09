@@ -167,7 +167,7 @@ class Installer
          * https://github.com/eugene1g/phantomjs is different.
          */
         if ($os === 'macosx' || $os === 'linux') {
-            $sourceName = str_replace('/bin', '', $sourceName);
+            //$sourceName = str_replace('/bin', '', $sourceName);
         }
 
         if ($os !== 'unknown') {
