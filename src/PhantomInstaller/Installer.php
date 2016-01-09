@@ -76,6 +76,7 @@ class Installer
     public static function getVersion($composer)
     {
         $packages = $composer->getRepositoryManager()->getLocalRepository()->getCanonicalPackages();
+        $os = self::getOS();
 
         foreach($packages as $package) {
             if($package->getName() === 'triplekdev/phantomjs-installer') {
@@ -90,7 +91,7 @@ class Installer
 
         // fallback to a hardcoded version number, if "dev-master" was set
         if ($version === 'dev-master') {
-            return '2.0.0';
+            return ($os === 'macosx' ? '2.0.1' : '2.0.0');
         }
 
         // grab version from commit-reference, e.g. "dev-master#<commit-ref> as version"
