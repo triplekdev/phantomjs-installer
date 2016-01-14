@@ -91,7 +91,7 @@ class Installer
 
         // fallback to a hardcoded version number, if "dev-master" was set
         if ($version === 'dev-master') {
-            return ($os === 'macosx' ? '2.0.1' : '2.0.0');
+            return ($os === 'macosx' ? '2.0.1' : '1.9.8');
         }
 
         // grab version from commit-reference, e.g. "dev-master#<commit-ref> as version"
